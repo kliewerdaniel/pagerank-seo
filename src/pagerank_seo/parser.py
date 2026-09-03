@@ -19,14 +19,17 @@ from __future__ import annotations
 
 import json
 import re
-from typing import Optional
+from typing import TYPE_CHECKING, Optional
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
 from bs4.element import NavigableString
 
 from pagerank_seo.models import Link, Page, RelType
-from pagerank_seo.utils import normalize_url, url_depth
+from pagerank_seo.utils import normalize_url
+
+if TYPE_CHECKING:
+    from pagerank_seo.crawler import RobotsTxt
 
 
 # ---------------------------------------------------------------------------
@@ -353,8 +356,8 @@ def parse_robots_txt(text: str) -> "RobotsTxt":
     ``Allow``, ``Disallow``, ``Sitemap``. We do not implement crawl-delay
     (Google deprecated it in 2023) or other directives.
     """
-    from pagerank_seo.crawler import RobotsTxt  # late import to avoid cycle
-    return RobotsTxt.parse(text)
+    from pagerank_seo.crawler import RobotsTxt as _RobotsTxt  # late import to avoid cycle
+    return _RobotsTxt.parse(text)
 
 
 # ---------------------------------------------------------------------------

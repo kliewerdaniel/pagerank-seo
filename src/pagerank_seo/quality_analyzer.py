@@ -10,9 +10,6 @@ the full epistemic framing.
 from __future__ import annotations
 
 import re
-from collections import Counter
-from typing import Optional
-from urllib.parse import urlsplit
 
 from pagerank_seo.models import CrawlResult, Page
 from pagerank_seo.quality import (
@@ -66,7 +63,6 @@ def classify_page_purpose(page: Page) -> PagePurpose:
     signals: list[str] = []
     purpose_scores: dict[PagePurposeType, int] = {p: 0 for p in PagePurposeType}
 
-    url = page.url.lower()
     title = (page.title or "").lower()
     h1 = (page.h1 or "").lower()
     body_text = " ".join(t for _, t in page.headings).lower()
@@ -283,7 +279,6 @@ def analyze_eeat(page: Page) -> EEATAnalysis:
     """
     out = EEATAnalysis()
     html_lower = page.raw_html.lower()
-    title_lower = (page.title or "").lower()
 
     # --- Experience ---
     experience_signals = [

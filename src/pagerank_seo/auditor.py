@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 from typing import Optional
 
 from pagerank_seo.analyzer import analyze
-from pagerank_seo.crawler import Crawler, Fetcher, RateLimiter
+from pagerank_seo.crawler import Crawler, Fetcher
 from pagerank_seo.graph import to_site_graph
 from pagerank_seo.models import (
     AuditConfig,

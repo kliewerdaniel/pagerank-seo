@@ -20,19 +20,12 @@ from urllib.parse import urlsplit
 from pagerank_seo.models import (
     CrawlResult,
     DimensionScore,
-    Finding,
     Page,
     SiteGraph,
 )
 from pagerank_seo.quality_analyzer import (
-    analyze_search_quality,
     analyze_page_quality,
-    classify_page_purpose,
-    classify_content,
-    analyze_eeat,
-    analyze_originality,
 )
-from pagerank_seo.utils import url_depth
 
 
 # Dimension weights (sum = 1.0). See docs/scoring.md §1.

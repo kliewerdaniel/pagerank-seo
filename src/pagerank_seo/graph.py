@@ -18,7 +18,6 @@ References
 """
 from __future__ import annotations
 
-import math
 from typing import Iterable
 
 import networkx as nx
@@ -27,7 +26,6 @@ from pagerank_seo.models import (
     CrawlResult,
     GraphMetrics,
     Link,
-    Page,
     RelType,
     SiteGraph,
 )

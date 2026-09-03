@@ -22,12 +22,11 @@ References
 """
 from __future__ import annotations
 
-import re
 import threading
 import time
 from dataclasses import dataclass, field
-from typing import Callable, Iterable, Optional
-from urllib.parse import urlparse, urlsplit, urljoin
+from typing import Callable, Optional
+from urllib.parse import urlsplit
 from xml.etree import ElementTree as ET
 
 import requests

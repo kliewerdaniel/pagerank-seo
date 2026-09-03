@@ -219,7 +219,7 @@ _ACTION_TABLE: dict[str, tuple[Priority, str, str, str, str, str]] = {
         "Reduce ad density so it does not interfere with the main content.",
         "Re-crawl and confirm ad density is reduced.",
     ),
-    "THIN_CONTENT": (
+    "THIN_CONTENT_PAGE_QUALITY": (
         Priority.MEDIUM, "medium", "medium", "high",
         "Expand the page content to better cover the topic, or merge it into a stronger page.",
         "Re-crawl and confirm word count is higher.",

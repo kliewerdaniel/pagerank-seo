@@ -5,7 +5,6 @@ Each renderer is a pure function of the ``AuditReport``; no I/O.
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
 
 from pagerank_seo.models import AuditReport
 
@@ -28,11 +27,11 @@ def to_json(report: AuditReport, *, indent: int = 2) -> str:
 def to_markdown(report: AuditReport) -> str:
     """Render a human-readable Markdown report."""
     lines: list[str] = []
-    lines.append(f"# PageRank SEO Audit Report")
+    lines.append("# PageRank SEO Audit Report")
     lines.append("")
     lines.append(f"**Site:** `{report.config.start_url}`  ")
     lines.append(f"**Generated:** {report.generated_at_iso}  ")
-    lines.append(f"**Version:** pagerank-seo 0.2.0  ")
+    lines.append("**Version:** pagerank-seo 0.2.0  ")
     lines.append(f"**Crawl budget:** max {report.config.max_pages} pages, depth {report.config.max_depth}  ")
     lines.append(f"**Pages crawled:** {report.crawl.pages_fetched} (failed: {report.crawl.pages_failed})  ")
     lines.append(f"**Crawl elapsed:** {report.crawl.crawl_elapsed_seconds:.2f}s")
