@@ -3,7 +3,6 @@
 > **PageRank-oriented SEO analysis:** turn a website into an information graph and produce prioritized, evidence-traceable recommendations.
 
 [![Tests](https://github.com/kliewerdaniel/pagerank-seo/actions/workflows/ci.yml/badge.svg)](https://github.com/kliewerdaniel/pagerank-seo/actions/workflows/ci.yml)
-[![PyPI](https://img.shields.io/pypi/v/pagerank-seo)](https://pypi.org/project/pagerank-seo/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## What is PageRank SEO?
