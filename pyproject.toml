@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pagerank-seo"
+version = "0.2.0"
+description = "PageRank-oriented SEO analysis: turn a website into an information graph and produce prioritized, evidence-traceable recommendations."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Daniel Kliewer", email = "danielkliewer@gmail.com" }]
+keywords = ["seo", "pagerank", "search", "graph", "crawler", "audit"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Text Processing :: Markup :: HTML",
+]
+dependencies = [
+    "requests>=2.28",
+    "beautifulsoup4>=4.11",
+    "lxml>=4.9",
+    "networkx>=2.8",
+    "numpy>=1.20",
+    "scipy>=1.7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.scripts]
+pagerank-seo = "pagerank_seo.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kliewerdaniel/pagerank-seo"
+Repository = "https://github.com/kliewerdaniel/pagerank-seo"
+Article = "https://danielkliewer.com/blog/pagerank-seo-information-architecture-problem"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

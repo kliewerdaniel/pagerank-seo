@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PageRank SEO Audit — https://example.com</title>
+<style>
+:root {
+  --fg: #1f2937;
+  --fg-muted: #6b7280;
+  --bg: #ffffff;
+  --bg-alt: #f9fafb;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --critical: #dc2626;
+  --high: #ea580c;
+  --medium: #ca8a04;
+  --low: #16a34a;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; color: var(--fg); background: var(--bg); }
+h1, h2, h3 { color: var(--fg); }
+h1 { border-bottom: 2px solid var(--border); padding-bottom: .5rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th, td { border: 1px solid var(--border); padding: .5rem .75rem; text-align: left; }
+th { background: var(--bg-alt); }
+.score { font-size: 2.5rem; font-weight: 700; color: var(--accent); }
+.priority-CRITICAL { color: var(--critical); font-weight: 600; }
+.priority-HIGH { color: var(--high); font-weight: 600; }
+.priority-MEDIUM { color: var(--medium); font-weight: 600; }
+.priority-LOW { color: var(--low); font-weight: 600; }
+.bar { background: var(--bg-alt); border-radius: 4px; overflow: hidden; height: 1.2rem; }
+.bar > span { display: block; height: 100%; background: var(--accent); }
+.url { font-family: ui-monospace, Menlo, monospace; font-size: .85em; color: var(--fg-muted); word-break: break-all; }
+.muted { color: var(--fg-muted); font-size: .9em; }
+section { margin-bottom: 2rem; }
+footer { border-top: 1px solid var(--border); padding-top: 1rem; color: var(--fg-muted); font-size: .85em; }
+</style>
+</head>
+<body>
+<h1>PageRank SEO Audit</h1>
+<p class="muted"><span class="url">https://example.com</span><br>Generated 2026-09-03T11:52:17+00:00</p>
+<p>Composite score</p>
+<div class="score">50.9<span style="font-size:1rem;color:var(--fg-muted);"> / 100</span></div>
+<div class="bar" aria-label="score"><span style="width: 50.9%;"></span></div>
+
+<h2>Dimensions</h2>
+<table>
+<thead><tr><th>Dimension</th><th>Score</th><th>Weight</th><th>Rationale</th></tr></thead>
+<tbody>
+<tr><td>Technical Integrity</td><td>58.3</td><td>0.18</td><td>Mean of ['charset_present', 'charset_utf8', 'title_present', 'title_length_ok', 'meta_description_present', 'canonical_present', 'canonical_self_or_consistent', 'noindex_not_present', 'lang_present', 'viewport_present', 'status_2xx', 'jsonld_parses'] checks across 1 page(s).</td></tr>
+<tr><td>Information Architecture</td><td>40.0</td><td>0.16</td><td>Penalty-driven score: orphan ratio 100%, sitemap missing, robots.txt missing, no BreadcrumbList JSON-LD</td></tr>
+<tr><td>Graph Health</td><td>100.0</td><td>0.18</td><td>Gini=0.00, WCC=1/1</td></tr>
+<tr><td>Internal Authority Distribution</td><td>0.0</td><td>0.10</td><td>Top-1 holds 100% of total PageRank</td></tr>
+<tr><td>Semantic Coherence</td><td>100.0</td><td>0.12</td><td>Mean per-page semantic score 1.25; duplicate-title ratio 0%</td></tr>
+<tr><td>Content Discoverability</td><td>0.0</td><td>0.10</td><td>0/1 pages have ≥1 inbound internal link</td></tr>
+<tr><td>User Experience</td><td>20.0</td><td>0.08</td><td>Mean landmark presence across 1 pages</td></tr>
+<tr><td>Reputation Architecture</td><td>30.0</td><td>0.08</td><td>Present: HTTPS</td></tr>
+</tbody>
+</table>
+
+<h2>Recommendations</h2>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-HIGH'>[HIGH] No &lt;meta charset&gt; declaration found.</div><p><strong>Action:</strong> Add &lt;meta charset=&quot;utf-8&quot;&gt; in the first 1024 bytes of &lt;head&gt;.</p><p class='muted'>Impact: medium &middot; Confidence: high &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm charset is declared.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-HIGH'>[HIGH] 1 page(s) have no inbound internal links.</div><p><strong>Action:</strong> Add contextual internal links to each orphan page from a relevant authoritative page.</p><p class='muted'>Impact: high &middot; Confidence: high &middot; Difficulty: medium</p><p><strong>Verify:</strong> Re-crawl and confirm the orphan's in-degree &gt; 0.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] &lt;meta name='description'&gt; missing.</div><p><strong>Action:</strong> Add a &lt;meta name=&quot;description&quot;&gt; that summarizes the page.</p><p class='muted'>Impact: medium &middot; Confidence: high &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm the meta is present.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] &lt;link rel=&quot;canonical&quot;&gt; missing.</div><p><strong>Action:</strong> Add a self-referential &lt;link rel=&quot;canonical&quot;&gt;.</p><p class='muted'>Impact: medium &middot; Confidence: high &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm canonical points to the page itself.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No JSON-LD structured data blocks found.</div><p><strong>Action:</strong> Add JSON-LD structured data appropriate to the page type (Article, Product, BreadcrumbList, etc.).</p><p class='muted'>Impact: medium &middot; Confidence: medium &middot; Difficulty: medium</p><p><strong>Verify:</strong> Re-crawl and confirm JSON-LD blocks parse successfully.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] Page has only 19 visible words.</div><p><strong>Action:</strong> Expand the page content to better cover the topic, or merge it into a stronger page.</p><p class='muted'>Impact: medium &middot; Confidence: medium &middot; Difficulty: high</p><p><strong>Verify:</strong> Re-crawl and confirm word count is higher.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No &lt;nav&gt; landmark found.</div><p><strong>Action:</strong> Add a &lt;nav&gt; landmark with primary site navigation.</p><p class='muted'>Impact: medium &middot; Confidence: high &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm &lt;nav&gt; is detected.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No &lt;main&gt; landmark found.</div><p><strong>Action:</strong> Wrap the primary content in a &lt;main&gt; element.</p><p class='muted'>Impact: medium &middot; Confidence: high &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm &lt;main&gt; is detected.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No robots.txt was fetched from the site root.</div><p><strong>Action:</strong> Add a /robots.txt file. At minimum, declare the sitemap location.</p><p class='muted'>Impact: low &middot; Confidence: high &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm robots.txt is fetched.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No sitemap URL was declared in robots.txt.</div><p><strong>Action:</strong> Generate an XML sitemap and reference it from robots.txt.</p><p class='muted'>Impact: medium &middot; Confidence: high &middot; Difficulty: medium</p><p><strong>Verify:</strong> Re-crawl and confirm sitemap URL is recorded.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] Top page holds 100% of total PageRank.</div><p><strong>Action:</strong> Add outbound internal links from the top-ranked page to related content.</p><p class='muted'>Impact: medium &middot; Confidence: medium &middot; Difficulty: medium</p><p><strong>Verify:</strong> Re-crawl and confirm top-1 PageRank share drops.</p></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No /about (or /about-us, /company) page was crawled.</div><p><strong>Action:</strong> Add an /about page describing who you are and what the site does.</p><p class='muted'>Impact: low &middot; Confidence: medium &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm /about is discovered.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No /contact page was crawled.</div><p><strong>Action:</strong> Add a /contact page with a way to reach you.</p><p class='muted'>Impact: low &middot; Confidence: medium &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm /contact is discovered.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] No /privacy or /terms page was crawled.</div><p><strong>Action:</strong> Add a /privacy (and optionally /terms) page.</p><p class='muted'>Impact: low &middot; Confidence: medium &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm /privacy is discovered.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-MEDIUM'>[MEDIUM] Home page does not declare Organization/WebSite/Person JSON-LD.</div><p><strong>Action:</strong> Add Organization or WebSite JSON-LD to the home page.</p><p class='muted'>Impact: medium &middot; Confidence: medium &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm the schema block is detected.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-LOW'>[LOW] No &lt;header&gt; landmark found.</div><p><strong>Action:</strong> Add a &lt;header&gt; landmark at the top of the page.</p><p class='muted'>Impact: low &middot; Confidence: medium &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm &lt;header&gt; is detected.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+<div style='border:1px solid var(--border); border-radius:6px; padding:.75rem 1rem; margin-bottom:1rem;'><div class='priority-LOW'>[LOW] No &lt;footer&gt; landmark found.</div><p><strong>Action:</strong> Add a &lt;footer&gt; landmark with secondary navigation and legal links.</p><p class='muted'>Impact: low &middot; Confidence: low &middot; Difficulty: low</p><p><strong>Verify:</strong> Re-crawl and confirm &lt;footer&gt; is detected.</p><details><summary>Affected URLs (1)</summary><ul><li><span class='url'>https://example.com/</span></li></ul></details></div>
+
+<h2>Graph summary</h2>
+<ul>
+<li>Nodes (pages): <strong>1</strong></li>
+<li>Edges (internal links): <strong>0</strong></li>
+<li>Weakly-connected components: <strong>1</strong></li>
+<li>Orphan pages (in-degree 0): <strong>1</strong></li>
+<li>Gini(PageRank): <strong>0.000</strong></li>
+<li>Top-1 PageRank share: <strong>100.0%</strong></li>
+</ul>
+
+<h3>Top PageRank pages</h3>
+<table>
+<thead><tr><th>URL</th><th>PageRank</th><th>Share</th></tr></thead>
+<tbody>
+<tr><td><span class='url'>https://example.com/</span></td><td>1.0000</td><td>100.0%</td></tr>
+</tbody>
+</table>
+
+<footer>
+PageRank values are an internal analytical metric, not Google's ranking signal. Recommendations are grounded in public documentation (Google Search Central, W3C, schema.org, the original PageRank paper) and engineering best practice.
+</footer>
+</body>
+</html>

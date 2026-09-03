@@ -1,0 +1,611 @@
+{
+  "config": {
+    "start_url": "https://example.com",
+    "max_pages": 20,
+    "max_depth": 3,
+    "request_timeout_seconds": 10.0,
+    "requests_per_second": 5.0,
+    "user_agent": "pagerank-seo/0.1 (+https://github.com/kliewerdaniel/pagerank-seo)",
+    "respect_robots_txt": true,
+    "follow_external_links": false,
+    "allowed_domain_suffixes": [],
+    "max_document_bytes": 5000000,
+    "max_redirects": 5
+  },
+  "crawl": {
+    "start_url": "https://example.com",
+    "pages": {
+      "https://example.com/": {
+        "url": "https://example.com/",
+        "status_code": 200,
+        "content_type": "text/html",
+        "raw_html": "<!doctype html><html lang=\"en\"><head><title>Example Domain</title><link rel=\"icon\" href=\"data:,\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style></head><body><div><h1>Example Domain</h1><p>This domain is for use in documentation examples without needing permission. Avoid use in operations.</p><p><a href=\"https://iana.org/domains/example\">Learn more</a></p></div></body></html>\n",
+        "title": "Example Domain",
+        "meta_description": null,
+        "canonical_url": null,
+        "robots_meta": null,
+        "lang": "en",
+        "viewport_meta": "width=device-width, initial-scale=1",
+        "charset": null,
+        "h1": "Example Domain",
+        "headings": [
+          [
+            1,
+            "Example Domain"
+          ]
+        ],
+        "json_ld_blocks": [],
+        "images_without_alt": 0,
+        "images_total": 0,
+        "has_nav": false,
+        "has_main": false,
+        "has_header": false,
+        "has_footer": false,
+        "text_word_count": 19,
+        "outgoing_links": [
+          {
+            "source_url": "https://example.com/",
+            "target_url": "https://iana.org/domains/example",
+            "anchor": "Learn more",
+            "rel": "dofollow",
+            "position_weight": 0.6,
+            "in_navigation": false
+          }
+        ],
+        "depth": 0,
+        "error": null,
+        "redirected_from": null
+      }
+    },
+    "edges": [
+      {
+        "source_url": "https://example.com/",
+        "target_url": "https://iana.org/domains/example",
+        "anchor": "Learn more",
+        "rel": "dofollow",
+        "position_weight": 0.6,
+        "in_navigation": false
+      }
+    ],
+    "robots_txt": null,
+    "sitemap_urls": [],
+    "pages_fetched": 1,
+    "pages_failed": 0,
+    "crawl_elapsed_seconds": 0.24069624999538064
+  },
+  "graph": {
+    "pages": {
+      "https://example.com/": {
+        "url": "https://example.com/",
+        "status_code": 200,
+        "content_type": "text/html",
+        "raw_html": "<!doctype html><html lang=\"en\"><head><title>Example Domain</title><link rel=\"icon\" href=\"data:,\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style>body{background:#eee;width:60vw;margin:15vh auto;font-family:system-ui,sans-serif}h1{font-size:1.5em}div{opacity:0.8}a:link,a:visited{color:#348}</style></head><body><div><h1>Example Domain</h1><p>This domain is for use in documentation examples without needing permission. Avoid use in operations.</p><p><a href=\"https://iana.org/domains/example\">Learn more</a></p></div></body></html>\n",
+        "title": "Example Domain",
+        "meta_description": null,
+        "canonical_url": null,
+        "robots_meta": null,
+        "lang": "en",
+        "viewport_meta": "width=device-width, initial-scale=1",
+        "charset": null,
+        "h1": "Example Domain",
+        "headings": [
+          [
+            1,
+            "Example Domain"
+          ]
+        ],
+        "json_ld_blocks": [],
+        "images_without_alt": 0,
+        "images_total": 0,
+        "has_nav": false,
+        "has_main": false,
+        "has_header": false,
+        "has_footer": false,
+        "text_word_count": 19,
+        "outgoing_links": [
+          {
+            "source_url": "https://example.com/",
+            "target_url": "https://iana.org/domains/example",
+            "anchor": "Learn more",
+            "rel": "dofollow",
+            "position_weight": 0.6,
+            "in_navigation": false
+          }
+        ],
+        "depth": 0,
+        "error": null,
+        "redirected_from": null
+      }
+    },
+    "metrics": {
+      "node_count": 1,
+      "edge_count": 0,
+      "pagerank": {
+        "https://example.com/": 1.0
+      },
+      "weighted_pagerank": {
+        "https://example.com/": 1.0
+      },
+      "in_degree": {
+        "https://example.com/": 0
+      },
+      "out_degree": {
+        "https://example.com/": 0
+      },
+      "weakly_connected_components": 1,
+      "orphan_pages": [
+        "https://example.com/"
+      ],
+      "gini_pagerank": 0.0,
+      "top1_share": 1.0,
+      "has_cycle": false,
+      "strongly_connected_components": 1
+    }
+  },
+  "findings": [
+    {
+      "layer": "technical",
+      "code": "CHARSET_MISSING",
+      "message": "No <meta charset> declaration found.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "technical",
+      "code": "META_DESCRIPTION_MISSING",
+      "message": "<meta name='description'> missing.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "technical",
+      "code": "CANONICAL_MISSING",
+      "message": "<link rel=\"canonical\"> missing.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "technical",
+      "code": "NO_STRUCTURED_DATA",
+      "message": "No JSON-LD structured data blocks found.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "semantic",
+      "code": "THIN_CONTENT",
+      "message": "Page has only 19 visible words.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {
+        "word_count": 19
+      }
+    },
+    {
+      "layer": "ux",
+      "code": "NAV_MISSING",
+      "message": "No <nav> landmark found.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "ux",
+      "code": "MAIN_MISSING",
+      "message": "No <main> landmark found.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "ux",
+      "code": "HEADER_MISSING",
+      "message": "No <header> landmark found.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "ux",
+      "code": "FOOTER_MISSING",
+      "message": "No <footer> landmark found.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "ia",
+      "code": "ROBOTS_TXT_MISSING",
+      "message": "No robots.txt was fetched from the site root.",
+      "evidence_urls": [
+        "https://example.com"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "ia",
+      "code": "SITEMAP_MISSING",
+      "message": "No sitemap URL was declared in robots.txt.",
+      "evidence_urls": [
+        "https://example.com"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "ia",
+      "code": "ORPHAN_PAGES",
+      "message": "1 page(s) have no inbound internal links.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "layer": "graph",
+      "code": "SINGLE_PAGE_DOMINATES",
+      "message": "Top page holds 100% of total PageRank.",
+      "evidence_urls": [],
+      "details": {
+        "top1_share": 1.0
+      }
+    },
+    {
+      "layer": "reputation",
+      "code": "ABOUT_PAGE_MISSING",
+      "message": "No /about (or /about-us, /company) page was crawled.",
+      "evidence_urls": [
+        "https://example.com"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "reputation",
+      "code": "CONTACT_PAGE_MISSING",
+      "message": "No /contact page was crawled.",
+      "evidence_urls": [
+        "https://example.com"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "reputation",
+      "code": "LEGAL_PAGE_MISSING",
+      "message": "No /privacy or /terms page was crawled.",
+      "evidence_urls": [
+        "https://example.com"
+      ],
+      "details": {}
+    },
+    {
+      "layer": "reputation",
+      "code": "NO_ORGANIZATION_SCHEMA",
+      "message": "Home page does not declare Organization/WebSite/Person JSON-LD.",
+      "evidence_urls": [
+        "https://example.com/"
+      ],
+      "details": {}
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "finding": "No <meta charset> declaration found.",
+      "evidence": [
+        "CHARSET_MISSING"
+      ],
+      "recommended_action": "Add <meta charset=\"utf-8\"> in the first 1024 bytes of <head>.",
+      "impact": "medium",
+      "confidence": "high",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm charset is declared.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "HIGH",
+      "finding": "1 page(s) have no inbound internal links.",
+      "evidence": [
+        "ORPHAN_PAGES"
+      ],
+      "recommended_action": "Add contextual internal links to each orphan page from a relevant authoritative page.",
+      "impact": "high",
+      "confidence": "high",
+      "implementation_difficulty": "medium",
+      "verification_method": "Re-crawl and confirm the orphan's in-degree > 0.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "<meta name='description'> missing.",
+      "evidence": [
+        "META_DESCRIPTION_MISSING"
+      ],
+      "recommended_action": "Add a <meta name=\"description\"> that summarizes the page.",
+      "impact": "medium",
+      "confidence": "high",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm the meta is present.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "<link rel=\"canonical\"> missing.",
+      "evidence": [
+        "CANONICAL_MISSING"
+      ],
+      "recommended_action": "Add a self-referential <link rel=\"canonical\">.",
+      "impact": "medium",
+      "confidence": "high",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm canonical points to the page itself.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No JSON-LD structured data blocks found.",
+      "evidence": [
+        "NO_STRUCTURED_DATA"
+      ],
+      "recommended_action": "Add JSON-LD structured data appropriate to the page type (Article, Product, BreadcrumbList, etc.).",
+      "impact": "medium",
+      "confidence": "medium",
+      "implementation_difficulty": "medium",
+      "verification_method": "Re-crawl and confirm JSON-LD blocks parse successfully.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "Page has only 19 visible words.",
+      "evidence": [
+        "THIN_CONTENT"
+      ],
+      "recommended_action": "Expand the page content to better cover the topic, or merge it into a stronger page.",
+      "impact": "medium",
+      "confidence": "medium",
+      "implementation_difficulty": "high",
+      "verification_method": "Re-crawl and confirm word count is higher.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No <nav> landmark found.",
+      "evidence": [
+        "NAV_MISSING"
+      ],
+      "recommended_action": "Add a <nav> landmark with primary site navigation.",
+      "impact": "medium",
+      "confidence": "high",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm <nav> is detected.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No <main> landmark found.",
+      "evidence": [
+        "MAIN_MISSING"
+      ],
+      "recommended_action": "Wrap the primary content in a <main> element.",
+      "impact": "medium",
+      "confidence": "high",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm <main> is detected.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No robots.txt was fetched from the site root.",
+      "evidence": [
+        "ROBOTS_TXT_MISSING"
+      ],
+      "recommended_action": "Add a /robots.txt file. At minimum, declare the sitemap location.",
+      "impact": "low",
+      "confidence": "high",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm robots.txt is fetched.",
+      "affected_urls": [
+        "https://example.com"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No sitemap URL was declared in robots.txt.",
+      "evidence": [
+        "SITEMAP_MISSING"
+      ],
+      "recommended_action": "Generate an XML sitemap and reference it from robots.txt.",
+      "impact": "medium",
+      "confidence": "high",
+      "implementation_difficulty": "medium",
+      "verification_method": "Re-crawl and confirm sitemap URL is recorded.",
+      "affected_urls": [
+        "https://example.com"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "Top page holds 100% of total PageRank.",
+      "evidence": [
+        "SINGLE_PAGE_DOMINATES"
+      ],
+      "recommended_action": "Add outbound internal links from the top-ranked page to related content.",
+      "impact": "medium",
+      "confidence": "medium",
+      "implementation_difficulty": "medium",
+      "verification_method": "Re-crawl and confirm top-1 PageRank share drops.",
+      "affected_urls": []
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No /about (or /about-us, /company) page was crawled.",
+      "evidence": [
+        "ABOUT_PAGE_MISSING"
+      ],
+      "recommended_action": "Add an /about page describing who you are and what the site does.",
+      "impact": "low",
+      "confidence": "medium",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm /about is discovered.",
+      "affected_urls": [
+        "https://example.com"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No /contact page was crawled.",
+      "evidence": [
+        "CONTACT_PAGE_MISSING"
+      ],
+      "recommended_action": "Add a /contact page with a way to reach you.",
+      "impact": "low",
+      "confidence": "medium",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm /contact is discovered.",
+      "affected_urls": [
+        "https://example.com"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "No /privacy or /terms page was crawled.",
+      "evidence": [
+        "LEGAL_PAGE_MISSING"
+      ],
+      "recommended_action": "Add a /privacy (and optionally /terms) page.",
+      "impact": "low",
+      "confidence": "medium",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm /privacy is discovered.",
+      "affected_urls": [
+        "https://example.com"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "finding": "Home page does not declare Organization/WebSite/Person JSON-LD.",
+      "evidence": [
+        "NO_ORGANIZATION_SCHEMA"
+      ],
+      "recommended_action": "Add Organization or WebSite JSON-LD to the home page.",
+      "impact": "medium",
+      "confidence": "medium",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm the schema block is detected.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "LOW",
+      "finding": "No <header> landmark found.",
+      "evidence": [
+        "HEADER_MISSING"
+      ],
+      "recommended_action": "Add a <header> landmark at the top of the page.",
+      "impact": "low",
+      "confidence": "medium",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm <header> is detected.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    },
+    {
+      "priority": "LOW",
+      "finding": "No <footer> landmark found.",
+      "evidence": [
+        "FOOTER_MISSING"
+      ],
+      "recommended_action": "Add a <footer> landmark with secondary navigation and legal links.",
+      "impact": "low",
+      "confidence": "low",
+      "implementation_difficulty": "low",
+      "verification_method": "Re-crawl and confirm <footer> is detected.",
+      "affected_urls": [
+        "https://example.com/"
+      ]
+    }
+  ],
+  "scores": [
+    {
+      "name": "Technical Integrity",
+      "score": 58.33,
+      "weight": 0.18,
+      "rationale": "Mean of ['charset_present', 'charset_utf8', 'title_present', 'title_length_ok', 'meta_description_present', 'canonical_present', 'canonical_self_or_consistent', 'noindex_not_present', 'lang_present', 'viewport_present', 'status_2xx', 'jsonld_parses'] checks across 1 page(s)."
+    },
+    {
+      "name": "Information Architecture",
+      "score": 40.0,
+      "weight": 0.16,
+      "rationale": "Penalty-driven score: orphan ratio 100%, sitemap missing, robots.txt missing, no BreadcrumbList JSON-LD"
+    },
+    {
+      "name": "Graph Health",
+      "score": 100.0,
+      "weight": 0.18,
+      "rationale": "Gini=0.00, WCC=1/1"
+    },
+    {
+      "name": "Internal Authority Distribution",
+      "score": 0.0,
+      "weight": 0.1,
+      "rationale": "Top-1 holds 100% of total PageRank"
+    },
+    {
+      "name": "Semantic Coherence",
+      "score": 100.0,
+      "weight": 0.12,
+      "rationale": "Mean per-page semantic score 1.25; duplicate-title ratio 0%"
+    },
+    {
+      "name": "Content Discoverability",
+      "score": 0.0,
+      "weight": 0.1,
+      "rationale": "0/1 pages have \u22651 inbound internal link"
+    },
+    {
+      "name": "User Experience",
+      "score": 20.0,
+      "weight": 0.08,
+      "rationale": "Mean landmark presence across 1 pages"
+    },
+    {
+      "name": "Reputation Architecture",
+      "score": 30.0,
+      "weight": 0.08,
+      "rationale": "Present: HTTPS"
+    }
+  ],
+  "composite_score": 50.9,
+  "generated_at_iso": "2026-09-03T11:52:17+00:00"
+}
